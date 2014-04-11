@@ -295,7 +295,7 @@ public class TopicSegmentation extends AbstractExperiment {
     private void runParametricSITS() throws Exception {
         double alpha = CLIUtils.getDoubleArgument(cmd, "alpha", 0.1);
         double beta = CLIUtils.getDoubleArgument(cmd, "beta", 0.1);
-        double gamma = CLIUtils.getDoubleArgument(cmd, "gamma", 0.2);
+        double gamma = CLIUtils.getDoubleArgument(cmd, "gamma", 0.25);
         int K = CLIUtils.getIntegerArgument(cmd, "K", 25);
 
         AuthorShiftSampler sampler = new AuthorShiftSampler();
@@ -321,8 +321,8 @@ public class TopicSegmentation extends AbstractExperiment {
 
     private void runNonparametricSITS() throws Exception {
         int K = CLIUtils.getIntegerArgument(cmd, "K", 25); // for initialization
-        double lambda = CLIUtils.getDoubleArgument(cmd, "lambda", 0.1);
-        double gamma = CLIUtils.getDoubleArgument(cmd, "gamma", 0.5);
+        double beta = CLIUtils.getDoubleArgument(cmd, "beta", 0.1);
+        double gamma = CLIUtils.getDoubleArgument(cmd, "gamma", 0.25);
         double alpha = CLIUtils.getDoubleArgument(cmd, "alpha", 0.1);
         double alpha_0 = CLIUtils.getDoubleArgument(cmd, "alpha_0", 0.1);
         double alpha_c = CLIUtils.getDoubleArgument(cmd, "alpha_C", 0.1);
@@ -330,7 +330,7 @@ public class TopicSegmentation extends AbstractExperiment {
         NonparametricAuthorShiftPathAssumptionSampler sampler = new NonparametricAuthorShiftPathAssumptionSampler();
         sampler.configure(experimentPath, documents, authors,
                 author_vocab.size(), word_vocab.size(),
-                lambda, gamma, alpha, alpha_0, alpha_c,
+                beta, gamma, alpha, alpha_0, alpha_c,
                 InternalAssumption.MINIMAL);
         sampler.setSamplerConfiguration(burn_in, max_iters, sample_lag);
         sampler.setK(K);
