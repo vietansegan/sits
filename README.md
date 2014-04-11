@@ -65,6 +65,11 @@ Here are the arguments:
 - `beta`: Dirichlet parameter for topics' word distribution (default: 0.1)
 - `gamma`: Beta parameter for speakers' topic shift distribution (default: 0.25)
 
+Example
+```
+java -cp 'dist/sits.jar:lib/*' segmentation.TopicSegmentation --dataset debate2008 --input data/debate2008/ldaformat/ --output data/segmentation/debate2008/ --burnIn 100 --maxIter 5000 --sampleLag 50 --gamma 2.5 --model param -v --alpha 0.1 --beta 0.1
+```
+
 ## Nonparametric SITS
 ```
 java -cp 'dist/sits.jar:lib/*' segmentation.TopicSegmentation --dataset <dataset> --input <format_folder> --output <output_folder> --model non-param -v
