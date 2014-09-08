@@ -35,7 +35,7 @@ Please refer to the file `build.xml` for additional options.
 # Input Data
 SITS takes as inputs a set of conversations, each has multiple turns, each of which is a maximal uninterrupted utterance by one speaker. Currently, SITS accepts the following files:
 
-1. `<dataset>.words`: contains the main texts in the following format:
+- `<dataset>.words`: contains the main texts in the following format:
 ```
   <num-conversations>\n
   <total-num-turns>\n
@@ -51,15 +51,15 @@ SITS takes as inputs a set of conversations, each has multiple turns, each of wh
 ```
 Here a blank line is used to separate two conversations. Each word is an index in the word vocabulary stored in file `<dataset>.voc`.
 
-2. `<dataset>.show`: contains the conversation name for each turn. The number of lines in this file is equal to the number of turns in `<dataset>.words`
+- `<dataset>.show`: contains the conversation name for each turn. The number of lines in this file is equal to the number of turns in `<dataset>.words`
 
-3. `<dataset>.authors`: contains the speaker of each turn. Each speaker is an index in the speaker vocabulary, stored in file `<dataset>.whois`
+- `<dataset>.authors`: contains the speaker of each turn. Each speaker is an index in the speaker vocabulary, stored in file `<dataset>.whois`
 
-4. `<dataset>.voc`: contains the word vocabulary
+- `<dataset>.voc`: contains the word vocabulary
 
-5. `<dataset>.whois`: contains the speaker vocabulary
+- `<dataset>.whois`: contains the speaker vocabulary
 
-6. `<dataset>.text`: contains the raw texts
+- `<dataset>.text`: contains the raw texts
 
 An example of a formatted data is also included in folder `data`.
 
