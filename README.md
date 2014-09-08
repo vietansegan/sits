@@ -11,11 +11,26 @@ This is an implementation of the Gibbs samplers for SITS models (both parametric
 }
 ```
 
+An extended version (with more details and experiments) was published in this article in Machine Learning journal:
+```
+@article{Nguyen:Boyd-Graber:Resnik:Cai:Midberry:Wang-2014,
+	Publisher = {Springer},
+	Title = {Modeling Topic Control to Detect Influence in Conversations using Nonparametric Topic Models},
+	Booktitle = {Machine Learning},
+	Author = {Viet-An Nguyen and Jordan Boyd-Graber and Philip Resnik and Deborah Cai and Jennifer Midberry and Yuanxin Wang},
+	Year = {2014},
+	Volume = {95},
+  	Number = {3},
+  	Pages = {381--421},
+}
+```
+
 # Compile
 - To compile: `ant compile`
 - To make a clean build: `ant clean-build`
 - To makr the jar file: `ant jar`
-Please refer to the file `build.xml` for other options.
+
+Please refer to the file `build.xml` for additional options.
 
 # Input Data
 SITS takes as inputs a set of conversations, each has multiple turns, each of which is a maximal uninterrupted utterance by one speaker. Currently, SITS accepts the following files:
